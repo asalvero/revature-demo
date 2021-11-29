@@ -1,0 +1,68 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+  <servlet>
+    <servlet-name>myservlet</servlet-name>
+    <servlet-class>MyServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>myservlet</servlet-name>
+    <url-pattern>/myservlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>servletsecond</servlet-name>
+    <servlet-class>SecondServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>servletsecond</servlet-name>
+    <url-pattern>/servletsecond</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>servletthird</servlet-name>
+    <servlet-class>ThirdServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>servletthird</servlet-name>
+    <url-pattern>/servletthird</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>servletregister</servlet-name>
+    <servlet-class>RegisterServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>servletregister</servlet-name>
+    <url-pattern>/servletregister</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>servletcalculator</servlet-name>
+    <servlet-class>CalculatorServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>servletcalculator</servlet-name>
+    <url-pattern>/servletcalculator</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>servletform</servlet-name>
+    <servlet-class>FormServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>servletform</servlet-name>
+    <url-pattern>/servletform</url-pattern>
+  </servlet-mapping>
+
+</web-app>
