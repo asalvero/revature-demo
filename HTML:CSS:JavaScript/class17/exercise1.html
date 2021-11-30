@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+
+    <button onclick="getData()">Get Data</button>
+    <h1 id="result"></h1>
+
+    <script>
+        function getData() {
+            // create XMLHttpRequest object
+            var request = new XMLHttpRequest();
+
+            // instantitate the request object
+            // open(method_type, url, async)
+            request.open('GET', 'https://jsonplaceholder.typicode.com/posts', true)
+
+            // defining event listener for readyStateChange event
+            request.onreadystatechange = function () {
+                // check if the request is completed and was successful
+                if (this.readyState == 4 && this.status == 200) {
+                    //inserting the response from the server into the html element
+                    let data = JSON.parse(this.responseText);
+                    let table = document.getElementById('table')
+                    //table.style.border = '1px solid black';
+                    for (i = data.length - 1; i >= 0; i--) {
+                        let row = table.insertRow(1);
+
+                        // let cell1 = row.insertCell(0);
+                        // let cell2 = row.insertCell(1);
+                        let cell3 = row.insertCell(0);
+                        let cell4 = row.insertCell(1);
+
+                        // cell1.innerHTML = data[i].userId;
+                        // cell2.innerHTML = data[i].id;
+                        cell3.innerHTML = data[i].title;
+                        cell4.innerHTML = data[i].body;
+                    }
+                }
+            }
+            // sending the request to the server
+            request.send();
+        }
+    </script>
+ 
+    <table class="table" id="table">
+        <thead>
+          <tr>
+            <!-- <th scope="col">userID</th>
+            <th scope="col">id</th> -->
+            <th scope="col">title</th>
+            <th scope="col">body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            
+          </tr>
+        </tbody>
+      </table>
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+    
+  </body>
+</html>

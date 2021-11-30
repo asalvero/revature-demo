@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Heading</h1>
+    <p>Paragraph</p>
+    <hr>
+    <h2>Pre tag</h2>
+
+    <pre>
+        function addNumber(int a, int b){
+            return a + b;
+        }
+    </pre>
+    <hr>
+    <h2>Hyperlinks</h2>
+    <a href = "demo1.html"> Click me</a><br>
+    <a href="http://www.google.com" target="blank">Google</a>
+    <hr>
+    <h2>Images</h2>
+    <img src="img/naruto.jpeg" alt="" title="Naruto">
+    <img src="img/sasuke.jpeg" alt="" title="Sasuke">
+    <hr>
+    <h1>Creating lists</h1>
+    <h2>Unorder List</h2>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+    <h2>Ordered List</h2>
+    <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ol>
+    <h2>Nested List</h2>
+    <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <ul>
+            <li>Item 2.1</li>
+            <li>Item 2.2</li>
+        </ul>
+    </ol>
+<hr>
+    <h2>HTML Table</h2>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Paul</td>
+            <td>m@gmail.com</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Watson</td>
+            <td>m@gmail.com</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Mark</td>
+            <td>m@gmail.com</td>
+        </tr>
+    </table>
+
+    <h2>Table 2</h2>
+    <table border="1">
+        <tr>
+            <th>S.no</th>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td colspan="2">Mark</td>
+           
+        </tr>
+        <tr>
+            <td colspan="3">2</td>
+         
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Watson</td>
+            <td>w@gmail.com</td>
+        </tr>
+    </table>
+    <h2>Table 3</h2>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td rowspan="3">1</td>
+            <td>Paul</td>
+            <td>m@gmail.com</td>
+        </tr>
+        <tr>
+          
+            <td>Watson</td>
+            <td>m@gmail.com</td>
+        </tr>
+        <tr>
+      
+            <td>Mark</td>
+            <td>m@gmail.com</td>
+        </tr>
+    </table>
+    <hr>
+    <h2>HTML Form</h2>
+    <form>
+        <p>Username: <input type="text" name="" id="" placeholder="Enter name" value="" readonly></p>
+        <p>
+            Country
+            <select name="" id="">
+                <option value="">-- please selct option</option>
+                <option value="USA">USA</option>
+                <option value="UK">UK</option>
+            </select>
+        </p>
+        <p>
+            Gender
+            <input type="radio" name="gender" id="" value="male">Male
+            <input type="radio" name="gender" id="" value="female">Female
+        </p>
+        <p>
+            Interest
+            <input type="checkbox" name="" id="">Baseball
+            <input type="checkbox" name="" id="">Basketball
+            <input type="checkbox" name="" id="">Football
+        </p>
+        <input type="submit" name="submit" id="">
+    </form>
+    <hr>
+<!--    <div>
+        navbar
+    </div>
+    <div>
+        header
+    </div>
+    <div>
+        sidebar
+    </div>
+    <div>
+        main-content
+    </div>
+    <div>
+        footer
+    </div> -->
+    <hr>
+    <h2>HTML 5 Web Form 2.0</h2>
+    <form>
+    Name: <input type="text" name="" id=""><br>
+    Email: <input type="email" name="" id=""><br>
+    Password: <input type="password" name="" id=""><br>
+    Phone: <input type="number" name="" id=""><br>
+    DateTime: <input type="date" name="" id=""><br>
+    Time: <input type="time" name="" id=""><br>
+    Month: <input type="month" name="" id=""><br>
+    Week: <input type="week" name="" id=""><br>
+    Color: <input type="color" name="" id=""><br>
+    Range: <input type="range" name="" id="">
+    <input type="submit" name="" id="">
+    <input type="reset" name="" id="">
+    </form> 
+    <hr>
+    <h2>HTML 5 API: Geolocation</h2>
+    <button onclick="getLocation()">Get Location</button>
+    <script>
+        function getLocation(){
+            if(navigator.geolocation){
+                //alert('supported')
+                navigator.geolocation.getCurrentPosition(successCallback, errorCallback)
+            }else{
+                alert('not supported')
+            }
+        }
+
+        function successCallback(position){
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+            alert('Latitude: '+ latitude+ ', Longitude: '+ longitude)
+        }
+
+        function errorCallback(error){
+        if(error.code ==1){
+            alert('access denied')
+        }else{
+            alert('position is unavailable')
+        }
+      }
+    </script>
+    <hr>
+    <h2>Storage</h2>
+    <script>
+        if(typeof(localStorage)!== undefined){
+            //alert("Supported")
+            localStorage.setItem('firstName', 'mark')
+            localStorage.lastName = 'smith'
+        }else{
+            alert("Not supported")
+        }
+    </script>
+    <h3 id="firstName"></h3>
+    <h3 id="lastName"></h3>
+    <script>
+        var fn = localStorage.getItem('firstName')
+        var ln = localStorage.lastName;
+        document.getElementById('firstName').innerHTML = fn;
+        document.getElementById('lastName').innerHTML = ln;
+
+        localStorage.removeItem('firstName');
+        localStorage.clear();
+    </script>
+    <script>
+        if(sessionStorage.count){
+            sessionStorage.count = Number(sessionStorage.count) + 1;
+        }else{
+            sessionStorage.count = 1;
+        }
+        document.write('Count: ' + sessionStorage.count)
+    </script>
+    <p>Refresh the page to increase count value</p>
+    <p>Close the window and open it again and check the count value</p>
+    <hr>
+    <h2>Video and Audio</h2>
+    <video controls>
+        <source src="img/CrabRave.mp4" type="video/mp4">
+    </video>
+    <hr>
+    <audio controls>
+        <source src="img/CrabRave.mp3" type="audio/mp3"> 
+    </audio>
+    <hr>
+    <h2>Drag and Drop</h2>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            border: 2px solid red;
+        }
+    </style>
+    <!-- <marquee behavior="" direction="">Hello........</marquee> -->
+    <div id="myDiv" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <img id="myImg1" draggable="true" src="img/naruto.jpeg" width="150" ondragstart="drag(event)" >
+    <img id="myImg2" draggable="true" src="img/sasuke.jpeg" width="150" ondragstart="drag(event)" >
+    <!-- <form>
+        <input type="submit" value="Submit" onclick="allowDrop(event)">
+    </form> -->
+    <script>
+        function allowDrop(event){
+            event.preventDefault()
+        }
+
+        function drag(event){
+           var id = event.target.id;
+           event.dataTransfer.setData('text', id);
+        }
+
+        function drop(event){
+            var id = event.dataTransfer.getData('text')
+            event.target.appendChild(document.getElementById(id))
+        }
+    </script>
+
+</body>
+</html>

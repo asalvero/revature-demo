@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="result"></h1>
+    <script>
+        //First
+        console.log('Hello World');
+
+        //Second
+        alert('Hello World');
+
+        //Third
+        document.write('Hello World');
+
+        //Four
+        document.getElementById('result').innerHTML = "H! from H1";
+    </script>
+    <hr>
+    <h1>Variables in js - Demo 2</h1>
+    <script>
+        var a;
+        a = 10;
+        console.log(a);
+        a = "abc";
+        a = 10.23;
+        a = true;
+
+        //local variable - declared inside block or function
+        function foo() {
+            var x = 10; //local variable
+        }
+
+        if (true) {
+            var y = 20; //local variable
+        }
+
+        //global variable
+    </script>
+    <hr>
+    <h2>Demo 3</h2>
+    <script>
+        var x = 10;
+        x = 'hello';
+        console.log(x);
+    </script>
+    <hr>
+    <h2>Demo 4</h2>
+    <script>
+        if (false) {
+            console.log('hi from if')
+        } else {
+            console.log('hi from else')
+        }
+    </script>
+    <hr>
+    <h2>Demo 5</h2>
+    <script>
+        var a = 1;
+        switch (a) {
+            case 1:
+                console.log("One");
+                break;
+            default:
+                console.log('not valid');
+        }
+    </script>
+    <hr>
+    <h2></h2>
+</body>
+
+</html>

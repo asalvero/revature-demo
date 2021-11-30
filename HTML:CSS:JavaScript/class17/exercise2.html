@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <button onclick="getData()">Get Data</button>
+    <div id="result"></div>
+
+    <script>
+
+
+
+        function getData() {
+            // create XMLHttpRequest object
+            var request = new XMLHttpRequest();
+
+            // instantiate the request object
+            // open(method_type, url, async)
+            request.open("GET", "https://jsonplaceholder.typicode.com/photos", true);
+
+            // defining event listener for readyStateChnage event
+            request.onreadystatechange = function () {
+                // check if the request is completed and was successfull
+                if (this.readyState == 4 && this.status == 200) {
+                    // inserting the response from the server into the html element
+                    var response = this.responseText;
+                    var data = JSON.parse(response)
+                    var text = "";
+                    text += `<div class="col-lg-12">
+                    <div class="card" style="width: 18rem;">`;
+
+                    for (let i = 0; i < data.length; i++) {
+                        text += `
+                    <img src="${data[i].url}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <p class="card-text">${data[i].title}</p>
+                    </div>`
+                    }
+
+                    text += `</div>
+                    </div>`;
+                    document.getElementById('result').innerHTML = text;
+                }
+            };
+
+            // sending the request to the server
+            request.send();
+        }
+    </script>
+
+    <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

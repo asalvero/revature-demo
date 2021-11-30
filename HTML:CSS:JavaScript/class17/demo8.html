@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
+        ul{
+            list-style: none;
+            background-color: darkblue;
+            padding: 10px;
+            width: auto;
+            margin: auto;
+            font-family: 'Mochiy Pop P One', sans-serif;
+        }
+        li{
+            display: inline-block;
+        }
+        a{
+            text-decoration: none;
+            color: gold;
+            padding: 90px;
+            font-size: 45px;
+        }
+        a:hover{
+            /* background-color: green;  */
+            /* font-size: 55px; */
+            transition: height 10s;
+        }
+        .rotate:hover{
+            -webkit-transform: rotateZ(-2deg);
+            -ms-transform: rotateZ(-2deg);
+            transform: rotateZ(-deg);
+        }
+        div{
+            background-color: cadetblue;
+            color: white;
+            width: 500px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <ul>
+        <li><a class="rotate" href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Product</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+    <br><br><br><br><br>
+    <div class="rotate">This is my div</div>
+    <button class="rotate">Hello</button>
+
+</body>
+</html>

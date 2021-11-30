@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework for 11/8</title>
+</head>
+<body>
+    <h1>Teams for Baseball Tournament</h1>    
+    <style>
+        .leftdiv
+         {
+         float: left;
+         }
+         .middleleftdiv
+         {
+         float: left;
+         }
+         .middlerightdiv
+         {
+         float: left;
+         }
+         .rightdiv
+         {
+         float: left;
+         }
+        div{
+            width: 300px;
+            height: 300px;
+            border: 2px solid rgb(7, 2, 1);
+        }
+    </style>
+    <div title="Team 1" id="myDiv" class="leftdiv" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div title="Team 2" id="myDiv" class="middleleftdiv" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div title="Team 3" id="myDiv" class="middlerightdiv" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div title="Team 4" id="myDiv" class="rightdiv" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div></div>
+    <img id="myImg1" draggable="true" src="img/homework/FernandoTatis.jpeg" width="150" ondragstart="drag(event)" >
+    <img id="myImg2" draggable="true" src="img/homework/GerritCole.jpeg" width="150" ondragstart="drag(event)" >
+    <img id="myImg3" draggable="true" src="img/homework/HarrisonBader.jpeg" width="150" ondragstart="drag(event)" >
+    <img id="myImg4" draggable="true" src="img/homework/KikeHernandez.jpeg" width="150" ondragstart="drag(event)" >
+    <img id="myImg5" draggable="true" src="img/homework/KrisBryant.jpeg" width="150" ondragstart="drag(event)" >
+    <img id="myImg6" draggable="true" src="img/homework/MikeTrout.jpeg" width="150" ondragstart="drag(event)" >
+    <img id="myImg7" draggable="true" src="img/homework/MookieBetts.jpeg" width="150" ondragstart="drag(event)" >
+    <img id="myImg8" draggable="true" src="img/homework/ShoheiOhtani.jpeg" width="150" ondragstart="drag(event)" >
+    <img id="myImg9" draggable="true" src="img/homework/DansbySwanson.jpeg" width="150" ondragstart="drag(event)" >
+    <img id="myImg10" draggable="true" src="img/homework/FranciscoLindor.jpeg" width="150" ondragstart="drag(event)" >
+    <img id="myImg11" draggable="true" src="img/homework/TylerGlasnow.jpeg" width="150" ondragstart="drag(event)" >
+    <img id="myImg12" draggable="true" src="img/homework/BusterPosey.jpeg" width="150" ondragstart="drag(event)" >
+
+    <script>
+        function allowDrop(event){
+            event.preventDefault()
+        }
+
+        function drag(event){
+           var id = event.target.id;
+           event.dataTransfer.setData('text', id);
+        }
+
+        function drop(event){
+            var id = event.dataTransfer.getData('text')
+            event.target.appendChild(document.getElementById(id))
+        }
+    </script>
+</body>
+</html>

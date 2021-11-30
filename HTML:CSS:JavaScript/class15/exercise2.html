@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2</title>
+</head>
+
+<body>
+    <h1>Exercise 2</h1>
+    <textarea maxlength="140" id="message" cols="30" rows="10"></textarea>
+    <div id="counter"></div>
+
+    <script>
+        const messageEle = document.getElementById('message');
+        const counterEle = document.getElementById('counter');
+
+        messageEle.addEventListener('input', function (e) {
+            const target = e.target;
+
+            // Get the `maxlength` attribute
+            const maxLength = target.getAttribute('maxlength');
+
+            // Count the current number of characters
+            const currentLength = target.value.length;
+
+            counterEle.innerHTML = `${maxLength - currentLength}`;
+        });
+    </script>
+
+</body>
+
+</html>
