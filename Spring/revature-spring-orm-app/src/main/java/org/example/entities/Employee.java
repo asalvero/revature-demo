@@ -16,6 +16,10 @@ public class Employee {
     @Column(name = "emp_email")
     private String email;
 
+    public Employee(){
+
+    }
+
     public Employee(int empId, String name, String email) {
         this.empId = empId;
         this.name = name;

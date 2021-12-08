@@ -15,8 +15,15 @@ public class App
     {
         ApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
         EmployeeDao dao = context.getBean("employeeDao", EmployeeDao.class);
-        Employee emp = new Employee(123, "Mark", "mark@gmail.com");
-        int r = dao.insert(emp);
-        System.out.println("done " + r);
+//        Employee emp = new Employee(124, "Paul", "paul@gmail.com");
+//        Employee emp2 = new Employee(125, "Watson", "watson@gmail.com");
+//        int r = dao.insert(emp);
+//        int s = dao.insert(emp2);
+//        System.out.println("done " + r);
+//        System.out.println("done " + s);
+//        dao.update(emp);
+//        dao.delete(emp);
+//        dao.getById(125);
+        dao.getEmployees();
     }
 }
